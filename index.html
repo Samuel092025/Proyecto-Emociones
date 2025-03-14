@@ -1,45 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baúl de las Emociones</title>
-    <style>
-        body { text-align: center; font-family: Arial, sans-serif; background-color: #f9f9f9; }
-        img { width: 200px; cursor: pointer; }
-        .emocion { margin-top: 20px; display: none; }
-    </style>
-    <script>
-        function mostrarEmocion() {
-            const emociones = [
-                { nombre: "Felicidad", img: "felicidad.jpg" },
-                { nombre: "Tristeza", img: "tristeza.jpg" },
-                { nombre: "Enojo", img: "enojo.jpg" },
-                { nombre: "Sorpresa", img: "sorpresa.jpg" },
-                { nombre: "Miedo", img: "miedo.jpg" },
-                { nombre: "Desagrado", img: "desagrado.jpg" },
-                { nombre: "Frustración", img: "frustracion.jpg" },
-                { nombre: "Confusión", img: "confusion.jpg" },
-                { nombre: "Vergüenza", img: "verguenza.jpg" },
-                { nombre: "Orgullo", img: "orgullo.jpg" },
-                { nombre: "Amor", img: "amor.jpg" },
-                { nombre: "Ansiedad", img: "ansiedad.jpg" }
-            ];
-            const emocionAleatoria = emociones[Math.floor(Math.random() * emociones.length)];
-            document.getElementById("imagenEmocion").src = emocionAleatoria.img;
-            document.getElementById("nombreEmocion").innerText = emocionAleatoria.nombre;
-            document.querySelector(".emocion").style.display = "block";
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baúl de las Emociones</title>
+  <style>
+    /* Importar una fuente divertida desde Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+    body {
+      text-align: center;
+      font-family: 'Fredoka One', cursive;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    h1 {
+      font-size: 3em;
+      margin-top: 20px;
+      color: #ff6f61;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    img {
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    img:hover {
+      transform: scale(1.1);
+    }
+    .emocion {
+      margin-top: 20px;
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+  <script>
+    function mostrarEmocion() {
+      const emociones = [
+        { nombre: "Felicidad", img: "img/felicidad.PNG" },
+        { nombre: "Tristeza", img: "img/tristeza.PNG" },
+        { nombre: "Enojo", img: "img/enojo.PNG" },
+        { nombre: "Sorpresa", img: "img/sorpresa.PNG" },
+        { nombre: "Miedo", img: "img/miedo.PNG" },
+        { nombre: "Desagrado", img: "img/desagrado.PNG" },
+        { nombre: "Frustración", img: "img/frustracion.PNG" },
+        { nombre: "Confusión", img: "img/confusion.PNG" },
+        { nombre: "Vergüenza", img: "img/verguenza.PNG" }
+      ];
+      const emocionAleatoria = emociones[Math.floor(Math.random() * emociones.length)];
+      document.getElementById("imagenEmocion").src = emocionAleatoria.img;
+      document.getElementById("nombreEmocion").innerText = emocionAleatoria.nombre;
+      document.querySelector(".emocion").style.display = "block";
+    }
+  </script>
 </head>
 <body>
-    <h1>Baúl de las Emociones</h1>
-    <p>Haz clic en el baúl para descubrir una emoción.</p>
-    <img src="baul-cerrado.jpg" alt="Baúl de emociones" onclick="mostrarEmocion()">
-    
-    <div class="emocion">
-        <h2 id="nombreEmocion"></h2>
-        <img id="imagenEmocion" src="" alt="Emoción" style="display:block; margin:auto;">
-    </div>
+  <h1>Baúl de las Emociones</h1>
+  <p>Haz clic en el baúl para descubrir una emoción.</p>
+  <img src="img/baul-cerrado.PNG" alt="Baúl de emociones" onclick="mostrarEmocion()">
+  
+  <div class="emocion">
+    <h2 id="nombreEmocion"></h2>
+    <img id="imagenEmocion" src="" alt="Emoción">
+  </div>
 </body>
 </html>
+
